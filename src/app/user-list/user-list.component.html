@@ -1,0 +1,30 @@
+<div class="container">
+    <a class="button"
+    [routerLink]="['../user-detail']"               
+    ariaCurrentWhenActive="page">
+   Create New
+ </a>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Password</td>
+            <td>Status</td>
+        </tr>
+        <tr *ngFor="let user of users">
+
+            <td>{{user.firstName}} {{user.userId}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.emailAddress}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.status}}</td>
+            <td>  <a class="button"
+                [routerLink]="['../user-detail', user.userId]"               
+                ariaCurrentWhenActive="page">
+               view
+             </a></td>
+        </tr>
+    </table>
+    
+</div>

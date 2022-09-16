@@ -1,0 +1,39 @@
+.btn-primary{
+    background-color: limegreen;
+    color: white;
+    margin-right: 1%;
+}
+.btn-alt{
+    background-color: black;
+    color: white;
+    margin-right: 1%;
+}
+
+.error{
+    color: rgb(255, 0, 0);
+    border-style: solid;
+}
+
+.container{
+    margin: 5%;
+}
+
+.right-align{
+    text-align: right;
+}
+.row{
+    margin-bottom: 1%;
+}
+
+input[type=text], textarea {
+    /*box-shadow: 0 0 5px limegreen;;*/
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid limegreen;;
+  }
+
+  .hidden{
+    display: hidden;
+  }
+
+ 
