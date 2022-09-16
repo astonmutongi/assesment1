@@ -19,6 +19,7 @@ export class UserDetailComponent implements OnInit {
   public statusSelect: Select [] = [  {Id:1, DisplayValue: "Active"}, {Id:2, DisplayValue: "Disabled"}];
   public isEditMode: boolean = true;
   public selected: number = 0;
+  public validatedClass: string = "";
   constructor(private _Activatedroute: ActivatedRoute, private userService: UserService, private router: Router) { }  
 
   ngOnInit(): void {
@@ -27,16 +28,7 @@ export class UserDetailComponent implements OnInit {
       this.userService.getSingle(id).subscribe((response) =>{
         if(response.body) {
           var user = response.body;
-          this.user.Client = user.client; 
-          this.user.FirstName = user.firstName; 
-          this.user.LastName = user.lastName; 
-          this.user.EmailAddress = user.emailAddress; 
-          this.user.Password = user.password; 
-          this.user.Status = user.status; 
-          this.user.UserRole = user.userRole; 
-          this.user.MobileCode = user.mobileCode; 
-          this.user.Mobile = user.mobile; 
-          this.isEditMode = false;
+          this.user = response.body as User;  
         }
       }
       
@@ -54,7 +46,10 @@ export class UserDetailComponent implements OnInit {
       if(invalid.length == 0){
         this.userService.save(this.user).subscribe((u) => {
           this.isEditMode = false;
+          this.validatedClass = "";
         } ); 
+      }else{
+        this.validatedClass = "was-validated";  
       }           
   }
 
@@ -65,5 +60,4 @@ export class UserDetailComponent implements OnInit {
   cancel(){
     this.router.navigate(['../user-list']);;
   }  
-
 }

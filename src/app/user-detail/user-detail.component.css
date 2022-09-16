@@ -25,15 +25,35 @@
     margin-bottom: 1%;
 }
 
-input[type=text], textarea {
-    /*box-shadow: 0 0 5px limegreen;;*/
+input[type=text],input[type=password], input[type=select], textarea {   
     padding: 3px 0px 3px 3px;
     margin: 5px 1px 3px 0px;
-    border: 1px solid limegreen;;
+    border: 1px solid limegreen;    
+  }
+
+ input[type=select], select {   
+    padding: 3px 0px 3px 3px;   
+    border-color: limegreen;
+    outline-color:1px solid limegreen;
   }
 
   .hidden{
     display: hidden;
   }
 
+  .hundred{
+    width: 100%
+  }
+
+  .thirty{
+    width: 30%
+  }
+
+  .ten{
+    width: 10%
+  }
+
+  .forty{
+    width: 40%
+  }
  

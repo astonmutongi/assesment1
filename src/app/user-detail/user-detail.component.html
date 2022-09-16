@@ -9,13 +9,13 @@
             <button mat-raised-button class="btn-primary" (click)="delete()"  ngDisabled="!isEditMode">Delete User</button>
         </div>
     </div>
-    <form #dataForm="ngForm" class="was-validated">
+    <form #dataForm="ngForm" [class]="validatedClass">
         <div class="row">
             <div class="col-md-3 right-align">
             First Name*
             </div>
             <div class="col-md-9">
-                <input type="text"  [(ngModel)]="user.FirstName" name="FirstName" required maxlength="100" ngDisabled="!isEditMode" class="form-input" size="100">               
+                <input type="text"  [(ngModel)]="user.FirstName" name="FirstName" required maxlength="100" ngDisabled="!isEditMode" class="form-input hundred" size="100">               
                 <div class="invalid-feedback"><i class="material-icons" matTooltip="This is a mandatory field.">error</i></div>
             </div>
         </div>
@@ -24,7 +24,7 @@
             Last Name*
             </div>
             <div class="col-md-9">
-                <input type="text" [(ngModel)]="user.LastName" name="LastName" ngDisabled="!isEditMode" required maxlength="100" class="form-input" size="100">
+                <input type="text" [(ngModel)]="user.LastName" name="LastName" ngDisabled="!isEditMode" required maxlength="100" class="form-input hundred" size="100">
                 <div class="invalid-feedback"><i class="material-icons" matTooltip="This is a mandatory field.">error</i></div>
             </div>
         </div>
@@ -33,7 +33,7 @@
             Email Address*
             </div>
             <div class="col-md-9">
-                <input type="text" [(ngModel)]="user.EmailAddress" name="EmailAddress" ngDisabled="!isEditMode" required maxlength="150" class="form-input" size="100">
+                <input type="text" [(ngModel)]="user.EmailAddress" name="EmailAddress" ngDisabled="!isEditMode" required maxlength="150" class="form-input hundred" size="100">
                 <div class="invalid-feedback"><i class="material-icons" matTooltip="This is a mandatory field.">error</i></div>
             </div>
         </div>
@@ -42,7 +42,7 @@
             Password*
             </div>
             <div class="col-md-9">
-                <input type="password" [(ngModel)]="user.Password" name="PasswordName" required maxlength="50" ngDisabled="!isEditMode" class="form-input" size="100">
+                <input type="password" [(ngModel)]="user.Password" name="PasswordName" required maxlength="50" ngDisabled="!isEditMode" class="form-input hundred" size="100">
                 <div class="invalid-feedback"><i class="material-icons" matTooltip="This is a mandatory field.">error</i></div>
             </div>
         </div>
@@ -51,8 +51,8 @@
             Mobile
             </div>
             <div class="col-md-9">
-                <input type="text" [(ngModel)]="user.MobileCode" name="MobileCode" maxlength="4" class="form-input" size="5">  
-                <input type="text" maxlength="20" [(ngModel)]="user.Mobile" name="Mobile" maxlength="20" numeric class="form-input" size="30">  
+                <input type="text" [(ngModel)]="user.MobileCode" name="MobileCode" maxlength="4" class="form-input ten" size="5">  
+                <input type="text" maxlength="20" [(ngModel)]="user.Mobile" name="Mobile" maxlength="20" numeric class="form-input thirty" size="30">  
             </div>
         </div>
         <div class="row">
@@ -60,7 +60,7 @@
             User Role
             </div>
             <div class="col-md-9">
-                <select name="Role" [(ngModel)]="user.UserRole">
+                <select name="Role" [(ngModel)]="user.UserRole" class="forty">
                     <option *ngFor="let s of roleSelect" [value]="s.Id"><span>{{s.DisplayValue}}</span></option>
                 </select> 
                 
@@ -71,8 +71,8 @@
             <div class="col-md-3 right-align">
             Client
             </div>
-            <div class="col-md-9">
-                <select name="Client" [(ngModel)]="user.Client">
+            <div class="col-md-9 ">
+                <select name="Client" [(ngModel)]="user.Client" class="hundred">
                     <option *ngFor="let s of clientSelect" [value]="s.Id"><span>{{s.DisplayValue}}</span></option>
                 </select>                
             </div>
@@ -83,7 +83,7 @@
             </div>
             <div class="col-md-9">
                
-                <select name="Status" [(ngModel)]="user.Status" required>
+                <select name="Status" [(ngModel)]="user.Status" required class="form-input forty">
                     <option value=""><span>Please select...</span></option>
                     <option *ngFor="let s of statusSelect" [value]="s.Id"><span>{{s.DisplayValue}}</span></option>
                 </select>  

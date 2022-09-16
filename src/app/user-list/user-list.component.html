@@ -14,13 +14,13 @@
         </tr>
         <tr *ngFor="let user of users">
 
-            <td>{{user.firstName}} {{user.userId}}</td>
-            <td>{{user.lastName}}</td>
-            <td>{{user.emailAddress}}</td>
-            <td>{{user.password}}</td>
-            <td>{{user.status}}</td>
+            <td>{{user.FirstName}} {{user.userId}}</td>
+            <td>{{user.LastName}}</td>
+            <td>{{user.EmailAddress}}</td>
+            <td>{{user.Password}}</td>
+            <td>{{user.Status}}</td>
             <td>  <a class="button"
-                [routerLink]="['../user-detail', user.userId]"               
+                [routerLink]="['../user-detail', user.UserId]"               
                 ariaCurrentWhenActive="page">
                view
              </a></td>
